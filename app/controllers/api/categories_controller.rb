@@ -3,7 +3,7 @@ class Api::CategoriesController < Api::ApiController
 
   def index
     category = Category.all
-    result = { :result => "true", :message => category}
+    result = { :result => "true", :category => category}
     render :json => result
   end
 
