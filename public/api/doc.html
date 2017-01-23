@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html ng-app="api">
+  <head>
+    <meta charset="utf-8">
+    <title>Documentacion</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+    <script type="text/javascript" src="js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </head>
+  <body>
+
+
+    <div class="container" ng-controller="ApiCtrl">
+      <h1>Documentacion de la api de peliculas</h1>
+        <h3>Servidor de pruebas: localhost:3000</h3>
+        <br>
+
+      <div class="row">
+        <!-- INCIA BLOQUE GET-->
+        <div class="">
+          <div class="col-sm-12 alert alert-danger" style="font-size:20px;">
+            <button class="btn btn-danger" ng-click="show1()">POST</button> /api/sign_up
+          </div>
+          <div class="col-sm-12 alert alert-danger animated bounceInLeft fast" ng-show="bloque1">
+            <span style="font-size:18px;" >Ruta: /api/sign_up</span><br><br>
+              <pre class="alert">
+                Envias:
+                {
+                 "user" :{
+                    "email": "roberm21@hotmail.com",
+                    "password": "123456",
+                    "password_confirmation": "123456"
+                   }
+                }
+                Respuesta:
+                {
+                  "result": "true",
+                  "user": {
+                    "token": "kdVZaYm2EfB1rWsyQzXb4tey",
+                    "email": "roberm21@hotmail.com"
+                  }
+                }
+              </pre>
+          </div>
+        </div>
+        <!--FINALIZA EL BLOQUE-->
+        <!-- INCIA BLOQUE POST-->
+        <div class="">
+          <div class="col-sm-12 alert alert-danger" style="font-size:20px;">
+            <button class="btn btn-danger" ng-click="show2()">POST</button> /api/login
+          </div>
+          <div class="col-sm-12 alert alert-danger animated bounceInLeft fast" ng-show="bloque2">
+            <span style="font-size:18px;" >Ruta: /api/login</span><br><br>
+              <pre class="alert">
+                Envias:
+                {
+                 "session" :{
+                    "email": "roberm21@hotmail.com",
+                    "password": "123456"
+                   }
+                }
+                Respuesta:
+                {
+                  "result": "true",
+                  "user": {
+                    "token": "HdinW7WzVu8iM5bQmS9hw7mW",
+                    "email": "roberm21@hotmail.com"
+                  }
+                }
+              </pre>
+          </div>
+        </div>
+        <!--FINALIZA EL BLOQUE-->
+        <!-- INCIA BLOQUE GET-->
+        <div class="">
+          <div class="col-sm-12 alert alert-danger" style="font-size:20px;">
+            <button class="btn btn-danger" ng-click="show3()">POST</button> /api/log_out
+          </div>
+          <div class="col-sm-12 alert alert-danger animated bounceInLeft fast" ng-show="bloque3">
+            <span style="font-size:18px;" >Ruta: /api/log_out</span><br><br>
+              <pre class="alert">
+                Envias:
+                {
+                 "user" :{
+                    "token": "3sAkT1W6rk5vQU5iaYrWpCZr"
+                   }
+                }
+                Respuesta:
+                {
+                  "success": "true",
+                  "user": {}
+                }
+              </pre>
+          </div>
+        </div>
+        <!--FINALIZA EL BLOQUE-->
+        <!-- INCIA BLOQUE GET-->
+        <div class="">
+          <div class="col-sm-12 alert alert-success" style="font-size:20px;">
+            <button class="btn btn-success" ng-click="show4()">GET</button> /api/allMovies
+          </div>
+          <div class="col-sm-12 alert alert-success animated bounceInLeft fast" ng-show="bloque4">
+            <span style="font-size:18px;" >Ruta: /api/allMovies</span><br><br>
+              <pre class="alert">
+                Respuesta:
+                {
+                  "result": "true",
+                  "message": [
+                    {
+                      "id": 1
+                      "name": "Harry Potter y el misterio del príncipe",
+                      "descripcion": "En esta sexta entrega, Harry se topa con un antiguo libro de texto de pociones lleno de anotaciones y recomendaciones firmadas por un misterioso príncipe. Al mismo tiempo, recibe clases particulares por el propio director del colegio, Albus Dumbledore, que le hace conocer momentos del pasado de Voldemort, para así enseñarle lo que son los horrocruxes.",
+                      "director": " David Yates",
+                      "categoria": "Fantasía"
+                    },
+                    {
+                      "id": 2
+                      "name": "Harry Potter y la piedra filosofal",
+                      "descripcion": "En esta primera obra se introducen la mayoría de los personajes principales de la serie, así como muchos de los lugares donde se desarrollará la acción. Se narran los primeros pasos de Harry en el mundo de la magia, así como su primer enfrentamiento con Voldemort, quien en su búsqueda de la inmortalidad quiere obtener el poder de la piedra filosofal.",
+                      "director": "Chris Columbus",
+                      "categoria": "Fantasía"
+                    }
+                  ]
+                }
+              </pre>
+          </div>
+        </div>
+        <!--FINALIZA EL BLOQUE-->
+        <!-- INCIA BLOQUE GET-->
+        <div class="">
+          <div class="col-sm-12 alert alert-danger" style="font-size:20px;">
+            <button class="btn btn-danger" ng-click="show5()">POST</button> /api/newMovie
+          </div>
+          <div class="col-sm-12 alert alert-danger animated bounceInLeft fast" ng-show="bloque5">
+            <span style="font-size:18px;" >Ruta: /api/newMovie</span><br><br>
+              <pre class="alert">
+                Envias:
+                {
+                 "user" :{
+                	"token": "cb682rTKgGjdMH78wiY9a8eW"
+                 },
+                 "movie" :{
+                    "name": "Harry Potter y el prisionero de Azkaban",
+                    "descripcion": "En esta oportunidad se introducen la figura del dementor y los personajes de Remus Lupin y Sirius Black, quien al inicio de la novela escapa de la prisión de Azkaban, además de desarrollar la historia de los padres de Harry. Es el único libro de la serie en el que no aparece Voldemort.",
+                    "director": " Alfonso Cuarón.",
+                    "category_id": 1
+                   }
+                }
+                Respuesta:
+                {
+                  "result": "true",
+                  "message": {
+                    "id": 3
+                    "name": "Harry Potter y el prisionero de Azkaban",
+                    "descripcion": "En esta oportunidad se introducen la figura del dementor y los personajes de Remus Lupin y Sirius Black, quien al inicio de la novela escapa de la prisión de Azkaban, además de desarrollar la historia de los padres de Harry. Es el único libro de la serie en el que no aparece Voldemort.",
+                    "director": " Alfonso Cuarón.",
+                    "categoria": "Fantasía"
+                  }
+                }
+              </pre>
+          </div>
+        </div>
+        <!--FINALIZA EL BLOQUE-->
+        <!-- INCIA BLOQUE GET-->
+        <div class="">
+          <div class="col-sm-12 alert alert-danger" style="font-size:20px;">
+            <button class="btn btn-danger" ng-click="show6()">POST</button> /api/detalleMovie
+          </div>
+          <div class="col-sm-12 alert alert-danger animated bounceInLeft fast" ng-show="bloque6">
+            <span style="font-size:18px;" >Ruta: /api/detalleMovie</span><br><br>
+              <pre class="alert">
+                Envias:
+                {
+                 "movie" :{
+                    "name": "Harry Potter y el prisionero de Azkaban",
+                    "descripcion": "En esta oportunidad se introducen la figura del dementor y los personajes de Remus Lupin y Sirius Black, quien al inicio de la novela escapa de la prisión de Azkaban, además de desarrollar la historia de los padres de Harry. Es el único libro de la serie en el que no aparece Voldemort.",
+                    "director": " Alfonso Cuarón.",
+                    "category_id": 1
+                   }
+                }
+                Respuesta:
+                {
+                  "result": "true",
+                  "message": {
+                    "name": "Harry Potter y el prisionero de Azkaban",
+                    "descripcion": "En esta oportunidad se introducen la figura del dementor y los personajes de Remus Lupin y Sirius Black, quien al inicio de la novela escapa de la prisión de Azkaban, además de desarrollar la historia de los padres de Harry. Es el único libro de la serie en el que no aparece Voldemort.",
+                    "director": " Alfonso Cuarón.",
+                    "categoria": "Fantasía"
+                  }
+                }
+              </pre>
+          </div>
+        </div>
+        <!--FINALIZA EL BLOQUE-->
+        <!-- INCIA BLOQUE GET-->
+        <div class="">
+          <div class="col-sm-12 alert alert-success" style="font-size:20px;">
+            <button class="btn btn-success" ng-click="show7()">GET</button> /api/allCategories
+          </div>
+          <div class="col-sm-12 alert alert-success animated bounceInLeft fast" ng-show="bloque7">
+            <span style="font-size:18px;" >Ruta: /api/allCategories</span><br><br>
+              <pre class="alert">
+                Respuesta:
+                {
+                  "result": "true",
+                  "message": [
+                    {
+                      "id": 1,
+                      "name": "Fantasía"
+                    }
+                  ]
+                }
+              </pre>
+          </div>
+        </div>
+        <!--FINALIZA EL BLOQUE-->
+      </div>
+    </div>
+
+  </body>
+</html>
